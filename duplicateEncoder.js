@@ -6,31 +6,23 @@
 // if a character is a duplicate.
 
 function duplicateEncode(str){
-    word = str.toLowerCase()
-    let array1 = [];
-    // let str = word
-    let array = [];
-    for (i=0; i<word.length; i++){
-      str.substr(word[i], '(');
-      array.push(word[i]);
-      array1.push(word[i])
-    }
-    array.forEach((e, i) => {
-      let last = array1.lastIndexOf(e);
-      let first = array1.indexOf(e);
-      // array[i] = '(';
-      console.log(e + ' i: ' + i + ' last: ' + last + ' first: ' + first)
-      if(i== first) {
-        array[i] = '('
-      }
-      if (i !== last){
-        array[i] = ')'
-      } 
-      if(i !== first) {
-        array[i] = ')'
-      } 
-      
-    })
-    // array.concat()
-    return array.join().replace(/,/g, '')
+  word = str.toLowerCase()
+  let array = [];
+  for (i=0; i<word.length; i++){
+    array.push(word[i]);
   }
+  array.forEach((e, i) => {
+    let last = word.lastIndexOf(e);
+    let first = word.indexOf(e);
+    console.log(e + ' i: ' + i + ' last: ' + last + ' first: ' + first)
+    if(i== first) {
+      array[i] = '('
+    }
+    if (i !== last || i!== first){
+      array[i] = ')'
+    }
+  })
+  return array.join().replace(/,/g, '')
+}
+
+duplicateEncode('success')
