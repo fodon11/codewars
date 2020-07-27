@@ -122,4 +122,4 @@ console.log(four(plus(nine())))
 console.log(eight(minus(three()))) 
 // 5
 console.log(six(dividedBy(two()))) 
-// 3
+// 3 
